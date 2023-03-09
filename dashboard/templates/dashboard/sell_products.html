@@ -1,41 +1,50 @@
 {% extends 'dashboard/base.html' %}
 {% block dashboardcontent %}
 
-    <form method="POST">
-        {% csrf_token %}
-        <div class="form-group mx-4 mt-4">
-            <table class='table table-striped'>
-            <thead>
-                <tr>
-                    <th scope='col'>ID</th>
-                    <th scope='col'>Nom</th>
-                    <th scope='col'>Prix</th>
-                    <th scope='col'>Quantité</th>
-                </tr>
-            </thead>
 
-            <tbody>
-                {% for item in all_products %}
-                    <tr>
-                        <td scope='row'>{{item.id}}</th>
-                        <td scope='row'>{{item.product_name}}</td>
-                        <td scope='row'>{{item.product_price}}</td>
-                        <td scope='row'>{{item.product_quantity}}</td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+    <div style="width: 100%;">
+        <div style="width: 30%;">
+            Bonjour
         </div>
+        <div style="width: 70%;">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group mx-4 mt-4">
+                    <table class='table table-striped'>
+                    <thead>
+                        <tr>
+                            <th scope='col'>ID</th>
+                            <th scope='col'>Nom</th>
+                            <th scope='col'>Prix</th>
+                            <th scope='col'>Quantité</th>
+                        </tr>
+                    </thead>
         
-        <div class="form-group mx-4 mt-4">
-            <input type="number" required name="sellqty" class="form-control" placeholder="Quantité" min="1">
+                    <tbody>
+                        {% for item in all_products %}
+                            <tr>
+                                <td scope='row'>{{item.id}}</th>
+                                <td scope='row'>{{item.product_name}}</td>
+                                <td scope='row'>{{item.product_price}}</td>
+                                <td scope='row'>{{item.product_quantity}}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                </div>
+                
+                <div class="form-group mx-4 mt-4">
+                    <input type="number" required name="sellqty" class="form-control" placeholder="Quantité" min="1">
+                </div>
+        
+                <div class="form-group mx-4 mt-4">
+                    <button type="submit" class="btn login-btn btn-block ">Vendre</button>
+                </div>
+        
+            </form>
         </div>
+    </div>
 
-        <div class="form-group mx-4 mt-4">
-            <button type="submit" class="btn login-btn btn-block ">Vendre</button>
-        </div>
-
-    </form>
 
 
 {% endblock %}
