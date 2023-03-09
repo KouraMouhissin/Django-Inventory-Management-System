@@ -1,7 +1,7 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,13 +30,13 @@
             <a class="navbar-brand my-0 mr-md-auto" href="{% url 'dashboard:dashboard_index' %}">
                 <img src="{% static 'img/logo.svg' %}" alt="logo" width="130" height="30" alt="Logo" loading="lazy">
             </a>
-            <button class="btn btn-outline logout-btn" onclick="location.href='{% url 'logout' %}'">Logout ({{user.username | capfirst}})</button>
+            <button class="btn btn-outline logout-btn" onclick="location.href='{% url 'logout' %}'">Se Deconnecter ({{user.username | capfirst}})</button>
 
         {% else %}
             <a class="navbar-brand my-0 mr-md-auto" href="{% url 'index' %}">
                 <img src="{% static 'img/logo.svg' %}" alt="logo" width="130" height="30" alt="Logo" loading="lazy">
             </a>
-            <button class="btn btn-outline logout-btn" onclick="location.href='{% url 'login' %}'">Login</button>
+            <button class="btn btn-outline logout-btn" onclick="location.href='{% url 'login' %}'">Se Connecter</button>
 
         {% endif %}
 

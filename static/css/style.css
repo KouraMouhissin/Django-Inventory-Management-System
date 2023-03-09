@@ -2,13 +2,17 @@
     font-family: 'Poppins', sans-serif;
 }
 
+.container h-100 {
+    background-color: black;
+}
+
 .theme-color{
-    color: #017a9b;
+    color: #070d0f;
 }
 
 .theme-btn{
-    color: #017a9b;
-    background-color: #017a9b;
+    color: #5e4709;
+    background-color: #9b6a01;
 }
 
 .login-header{
@@ -17,19 +21,20 @@
 }
 
 .background{
+    background-color: #000000;
     width: 100%;
     height: 100vh;
 }
 
  .login-btn{
-     background-color: #017a9b;
-     color: white;
+     background-color: #050808;
+     color: rgb(0, 0, 0);
  }
  .login-btn:hover{
-     color: white;
+     color: rgb(0, 0, 0);
  }
 
- /* Dashboard */
+ /* Tableau de bord */
 
  .logout-btn{
      color: #017a9b;
@@ -37,35 +42,35 @@
  }
 
  .logout-btn:hover{
-    color: white;
+    color: rgb(0, 0, 0);
     border: 1px solid #017a9b;
     background-color: #017a9b;
 }
 
 .action-btn{
     background-color: #017a9b;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .action-btn:hover{
     background-color: #4da2b9;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .fa-plus-square{
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
-/* Add Products */
+/* Ajout de Produits */
 
 .form-header{
-    background-color: #F7F7F7;
+    background-color: white;
     color: #017a9b;
     font-weight: 700;
     font-size: x-large;
 }
 
-/* Search Page */
+/* Barre de recherche Page */
 
 .search-icon{
     color: white;
@@ -79,7 +84,7 @@ h1,h2,h3{
     font-weight: 700;
 }
 
-/* Sell Product */
+/* Vente de produits Product */
 select:invalid { 
-    color: gray; 
+    color: gray;
 }

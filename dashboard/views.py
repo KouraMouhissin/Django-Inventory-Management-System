@@ -8,7 +8,7 @@ from django.contrib.auth.forms import UserCreationForm
 
 @login_required
 def dashboard_index(request):
-    return render(request,'dashboard/index.html',context={'title':'Dashboard'})
+    return render(request,'dashboard/index.html',context={'title':'Tableau De Bord'})
 
 
 
@@ -26,21 +26,21 @@ def add_products(request):
             form.save()
             
             context = {
-                'result' : 'New Product Added successfully',
-                'title':'Add Products',
+                'result' : 'Nouveau Produit Ajouter avec succes',
+                'title':'Ajout De Produits',
             }
             return render(request,'dashboard/result.html',context=context)
 
         else:
             context = {
                 'result' : 'ERROR',
-                'title':'Add Products',
+                'title':'Ajout De Produits',
             }
             return render(request,'dashboard/result.html',context=context)
 
     context = {
         'form' : form,
-        'title':'Add Products',
+        'title':'Ajout De Produits',
         }
 
     return render(request,'dashboard/add_product.html',context=context)
@@ -64,7 +64,7 @@ def search_available_products(request):
             #print(all_products)
             context = {
                 'all_products' : all_products,
-                'title' : 'Search Result',
+                'title' : 'Resultat De Recherche',
             }
             
             return render(request,'dashboard/view_available_products.html',context=context)
@@ -72,7 +72,7 @@ def search_available_products(request):
 
     context = {
         'form' : form,
-        'title':'Search Products',
+        'title':'Recherche De Produit',
         }
 
     return render(request,'dashboard/search_product.html',context=context)
@@ -89,7 +89,7 @@ def view_available_products(request):
     all_products = models.Available_product_table.objects.all()
     context = {
         'all_products' : all_products,
-        'title' : 'All Products',
+        'title' : 'Tous Les Produits',
         }
             
     return render(request,'dashboard/view_available_products.html',context=context)
@@ -126,15 +126,15 @@ def sell_available_products(request):
             update_product.save()
             
             context = {
-                'result' : 'Product sold successfully!',
-                'title':'Sell Products',
+                'result' : 'Produit vendu avec succes!',
+                'title':'Vendre Des Produits',
             }
             return render(request,'dashboard/result.html',context=context)
 
         else:
             context = {
-                'result' : 'Enter Quantity is less than available stock or Product is Out of Stock!',
-                'title':'Sell Products',
+                'result' : 'La quantité de ce produit est epuise veuillez le recharger',
+                'title':'Vendre Des Produits',
             }
             return render(request,'dashboard/result.html',context=context)
         
@@ -142,7 +142,7 @@ def sell_available_products(request):
     all_products = models.Available_product_table.objects.all()
     context = {
         'all_products' : all_products,
-        'title' : 'Sell Products',
+        'title' : 'Vendre Des Produits',
         }
             
     return render(request,'dashboard/sell_products.html',context=context)
@@ -158,7 +158,7 @@ def view_sold_products(request):
     all_sold_products = models.Sold_product_table.objects.all()
     context = {
         'all_sold_products' : all_sold_products,
-        'title' : 'Sold Products',
+        'title' : 'Les Produits Vendu',
         }
             
     return render(request,'dashboard/view_sold_products.html',context=context)
@@ -179,7 +179,7 @@ def users(request):
             form.save()
             
             context = {
-                'result' : 'User Added successfully',
+                'result' : 'Nouveau Utilisateur Ajouter avec succes',
                 'title':'Add User',
             }
             return render(request,'dashboard/result.html',context=context)
