@@ -11,8 +11,8 @@
                 <form method="POST">
                     {% csrf_token %}
                     <div class="form-group mx-4 mt-4">
-                        <table class='table table-striped'>
-                        <thead>
+                        <table class='table'>
+                        <thead class="thead-dark">
                             <tr>
                                 <th scope='col'>ID</th>
                                 <th scope='col'>Nom</th>
@@ -39,7 +39,7 @@
                     </div>
             
                     <div class="form-group mx-4 mt-4">
-                        <button type="submit" class="btn login-btn btn-block ">Vendre</button>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">Vendre</button>
                     </div>
             
                 </form>
