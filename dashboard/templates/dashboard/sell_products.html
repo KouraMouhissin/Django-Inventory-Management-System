@@ -2,47 +2,49 @@
 {% block dashboardcontent %}
 
 
-    <div style="width: 100%;">
-        <div style="width: 50%; float:left; border-right: 2px #000 solid;">
-            Bonjour
-        </div>
-        <div style="width: 50%; float:right;">
-            <form method="POST">
-                {% csrf_token %}
-                <div class="form-group mx-4 mt-4">
-                    <table class='table table-striped'>
-                    <thead>
-                        <tr>
-                            <th scope='col'>ID</th>
-                            <th scope='col'>Nom</th>
-                            <th scope='col'>Prix</th>
-                            <th scope='col'>Quantité</th>
-                        </tr>
-                    </thead>
-        
-                    <tbody>
-                        {% for item in all_products %}
+    <div class="container">
+        <div class="row">
+            <div class="col" style="width: 50%; float:left; border-right: 2px #000 solid;">
+                Bonjour
+            </div>
+            <div class="col">
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="form-group mx-4 mt-4">
+                        <table class='table table-striped'>
+                        <thead>
                             <tr>
-                                <td scope='row'>{{item.id}}</th>
-                                <td scope='row'>{{item.product_name}}</td>
-                                <td scope='row'>{{item.product_price}}</td>
-                                <td scope='row'>{{item.product_quantity}}</td>
+                                <th scope='col'>ID</th>
+                                <th scope='col'>Nom</th>
+                                <th scope='col'>Prix</th>
+                                <th scope='col'>Quantité</th>
                             </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-                </div>
-                
-                <div class="form-group mx-4 mt-4">
-                    <input type="number" required name="sellqty" class="form-control" placeholder="Quantité" min="1">
-                </div>
-        
-                <div class="form-group mx-4 mt-4">
-                    <button type="submit" class="btn login-btn btn-block ">Vendre</button>
-                </div>
-        
-            </form>
-        </div>
+                        </thead>
+            
+                        <tbody>
+                            {% for item in all_products %}
+                                <tr>
+                                    <td scope='row'>{{item.id}}</th>
+                                    <td scope='row'>{{item.product_name}}</td>
+                                    <td scope='row'>{{item.product_price}}</td>
+                                    <td scope='row'>{{item.product_quantity}}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    </div>
+                    
+                    <div class="form-group mx-4 mt-4">
+                        <input type="number" required name="sellqty" class="form-control" placeholder="Quantité" min="1">
+                    </div>
+            
+                    <div class="form-group mx-4 mt-4">
+                        <button type="submit" class="btn login-btn btn-block ">Vendre</button>
+                    </div>
+            
+                </form>
+            </div>
+        </div>  
     </div>
 
 
